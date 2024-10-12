@@ -55,7 +55,7 @@ export default function Navbar() {
 
         {/* Navigation Menu */}
         <ul
-          className={`md:flex space-x-6 absolute md:relative top-0 left-0 w-full md:w-auto bg-[#111826] md:bg-transparent transition-transform duration-300 ease-in-out ${
+          className={`md:flex space-x-3 absolute md:relative top-0 left-0 w-full md:w-auto bg-[#111826] md:bg-transparent transition-transform duration-300 ease-in-out ${
             isOpen ? "translate-y-0" : "-translate-y-full"
           } md:translate-y-0`}
         >
