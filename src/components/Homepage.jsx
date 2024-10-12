@@ -27,6 +27,7 @@ export default function HomePage() {
   useEffect(() => {
     const currentRole = roles[roleIndex]
     const timeout = setTimeout(() => {
+      
       if (!isDeleting && text === currentRole) {
         setTimeout(() => setIsDeleting(true), 1500)
       } else if (isDeleting && text === "") {
@@ -70,6 +71,7 @@ export default function HomePage() {
                 target="_blank" // Open in a new tab
                 rel="noopener noreferrer" // Security best practices
                 className="bg-gray-800 p-2 rounded-full hover:bg-cyan-400 transition-colors"
+                
               >
                 <Icon className="w-6 h-6" />
               </Link>
@@ -94,6 +96,7 @@ export default function HomePage() {
         </div>
       </main>
       </div>
+
       </section>
       <About/>
       <Services/>

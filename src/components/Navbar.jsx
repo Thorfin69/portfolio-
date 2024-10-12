@@ -1,10 +1,12 @@
 'use client';
 
-import { useState } from "react";
+import { useEffect , useRef, useState } from "react";
 import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const navbarRef = useRef(null); // Create a ref for the navbar
+  
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -13,6 +15,7 @@ export default function Navbar() {
   const closeMenu = () => {
     setIsOpen(false); // Close the menu when a link is clicked
   };
+  
 
   const scrollToSection = (sectionId) => {
     const headerOffset = window.innerWidth < 768 ? 80 : 100; // Adjust header offset for mobile vs. desktop
@@ -27,10 +30,25 @@ export default function Navbar() {
       });
     }
   };
+   // Effect to close the navbar when clicking outside
+   useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navbarRef.current && !navbarRef.current.contains(event.target)) {
+        setIsOpen(false); // Close navbar if clicked outside
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside); // Add event listener
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside); // Cleanup on unmount
+    };
+  }, []);
+  
 
   return (
     <header className="container mx-auto px-4 py-6 md:px-[230px] bg-[#111826] shadow-lg sticky top-0 z-50">
-      <nav className="flex justify-between items-center">
+      <nav ref={navbarRef} className="flex justify-between items-center">
         <h1 className="text-2xl font-bold text-white">Portfolio.</h1>
 
         {/* Hamburger Icon */}

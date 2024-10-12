@@ -1,6 +1,6 @@
 'use client';
 
-import React, {useState, useEffect} from 'react';
+import React, {useState,useRef ,  useEffect} from 'react';
 import Image from 'next/image';
 import {ExternalLink} from 'lucide-react';
 import {motion} from 'framer-motion';
@@ -98,6 +98,7 @@ function ProjectCard({project, index}) {
         setCurrentImage] = useState(0);
     const [isLoaded,
         setIsLoaded] = useState(false);
+     const imagesRef = useRef(null); // Create a ref for the images container
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -105,6 +106,7 @@ function ProjectCard({project, index}) {
         }, 3000); // Change image every 3 seconds
 
         return () => clearInterval(interval); // Clear interval on component unmount
+        
     }, [project.images.length]);
 
     return (
@@ -129,7 +131,7 @@ function ProjectCard({project, index}) {
             scale: 0.95
         }}>
             {/* Image Slider */}
-            <div className="relative h-64 overflow-hidden">
+            <div className="relative h-64 overflow-hidden ">
                 <Image
                     src={project.images[currentImage]}
                     alt={project.title}
