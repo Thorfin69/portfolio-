@@ -36,12 +36,12 @@ export default function Services() {
                 <service.icon className="w-12 h-12 text-cyan-400" />
                 <h3 className="text-xl font-semibold mt-4">{service.title}</h3>
               </div>
-              <p className="text-gray-400 mb-4">{service.description}</p>
-              <button
+              <p className="text-gray-400 text-center md:text-left mb-4">{service.description}</p>
+              {/* <button 
                 className="text-cyan-400 border border-cyan-400 hover:bg-cyan-400 hover:text-gray-900 py-2 px-4 rounded-md transition-colors duration-300"
               >
                 Read more
-              </button>
+              </button> */}
             </div>
           ))}
         </div>

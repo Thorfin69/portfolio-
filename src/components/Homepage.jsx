@@ -10,7 +10,8 @@ import Portfolio from "./Portfolio"
 import Contact from "./Contact"
 import Footer from "./Footer"
 
-const roles = [ "UI/UX Designer", "Logo Designer", "Brand Identity"]
+const roles = ["UI/UX Designer", "Logo Designer", "Brand Identity Designer"];
+
 const socialLinks = [
     // { icon: Twitter, url: "https://twitter.com/yourprofile" },
     { icon: Youtube , url: "https://youtube.com/@designeraatir?si=ZNUuSieVCanADakF" },
@@ -48,7 +49,7 @@ export default function HomePage() {
 
      
       <main className="container mx-auto px-4 py-12 flex flex-col lg:flex-row items-center justify-between">
-        <div className="lg:w-1/2 space-y-8">
+        <div className="lg:w-1/2 text-center md:text-left space-y-8">
           <h2 className="text-4xl font-bold">
             Hello It&apos;s Me
             <br />
@@ -61,7 +62,7 @@ export default function HomePage() {
           <p className="text-gray-400 max-w-md">
           As a passionate designer, I believe in the power of visual storytelling. My work combines creativity and functionality, creating user-centered designs that engage and inspire. With a keen eye for detail, I strive to transform ideas into stunning visuals that leave a lasting impression and elevate brand experiences.
           </p>
-          <div className="flex space-x-4">
+          <div className="flex justify-center items-center md:justify-start md:items-start space-x-4">
           {socialLinks.map(({ icon: Icon, url }, index) => (
               <Link
                 key={index}
@@ -78,11 +79,11 @@ export default function HomePage() {
             Download CV
           </button> */}
         </div>
-        <div className="lg:w-1/2 mt-12 lg:mt-0">
-          <div className="relative w-80 h-80 mx-auto">
+        <div className=" lg:w-1/2 mt-12 lg:mt-0">
+          <div className="md:block hidden relative w-80 h-80 mx-auto">
             <div className="absolute inset-0 bg-cyan-400 rounded-full blur-2xl opacity-75"></div>
             <Image
-              src="/Assets/pfp2.png"
+              src="https://res.cloudinary.com/dzntvx1ws/image/upload/v1728732274/main/Pfps/pp2quysbyp9pcybyeuv6.png"
               alt="Profile"
               width={320}
               height={320}

@@ -1,4 +1,5 @@
-'use client'
+'use client';
+
 import { useState } from "react";
 import Link from "next/link";
 
@@ -14,19 +15,21 @@ export default function Navbar() {
   };
 
   const scrollToSection = (sectionId) => {
-    const headerOffset = 80; // Height of the fixed header
+    const headerOffset = window.innerWidth < 768 ? 80 : 100; // Adjust header offset for mobile vs. desktop
     const element = document.getElementById(sectionId);
-    const elementPosition = element.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.scrollY - headerOffset;
+    if (element) {
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth",
-    });
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
   };
 
   return (
-    <header className=" container mx-auto px-4 py-6 md:px-[230px] bg-[#111826] shadow-lg sticky top-0 z-50">
+    <header className="container mx-auto px-4 py-6 md:px-[230px] bg-[#111826] shadow-lg sticky top-0 z-50">
       <nav className="flex justify-between items-center">
         <h1 className="text-2xl font-bold text-white">Portfolio.</h1>
 
@@ -57,17 +60,18 @@ export default function Navbar() {
           } md:translate-y-0`}
         >
           {["home", "about", "services", "portfolio", "contact"].map((item) => (
-            <li key={item} className="text-center md:text-left  md:py-0 md:px-4 py-4">
-              <Link
+            <li key={item} className="text-center md:text-left md:py-0 md:px-4 py-4">
+              <a
                 className="hover:text-cyan-400 transition-colors block px-4 md:px-0"
                 href={`#${item}`} // Linking to section IDs
-                onClick={() => {
+                onClick={(e) => {
+                  e.preventDefault(); // Prevent default link behavior
                   scrollToSection(item); // Call the scroll function
                   closeMenu(); // Close menu on link click
                 }}
               >
                 {item.charAt(0).toUpperCase() + item.slice(1)} {/* Capitalize first letter */}
-              </Link>
+              </a>
             </li>
           ))}
         </ul>

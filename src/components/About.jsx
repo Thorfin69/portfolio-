@@ -11,7 +11,7 @@ export default function About() {
             <div className="absolute  inset-0 bg-cyan-400 rounded-full blur-2xl opacity-75"></div>
             {/* Circular profile image */}
             <Image
-              src="/Assets/pfp2.png"
+              src="https://res.cloudinary.com/dzntvx1ws/image/upload/v1728732274/main/Pfps/pp2quysbyp9pcybyeuv6.png"
               alt="Profile"
               width={320}
               height={320}
