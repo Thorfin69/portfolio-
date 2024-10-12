@@ -81,14 +81,14 @@ export default function HomePage() {
         <div className="lg:w-1/2 mt-12 lg:mt-0">
           <div className="relative w-80 h-80 mx-auto">
             <div className="absolute inset-0 bg-cyan-400 rounded-full blur-2xl opacity-75"></div>
-            {/* <Image
+            <Image
               src="/Assets/pfp2.png"
               alt="Profile"
               width={320}
               height={320}
               
               className="rounded-full object-cover  relative z-10"
-            /> */}
+            />
           </div>
         </div>
       </main>

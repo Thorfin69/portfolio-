@@ -26,7 +26,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="container mx-auto px-4 py-6 md:px-[230px] bg-[#111826] shadow-lg sticky top-0 z-50">
+    <header className=" container mx-auto px-4 py-6 md:px-[230px] bg-[#111826] shadow-lg sticky top-0 z-50">
       <nav className="flex justify-between items-center">
         <h1 className="text-2xl font-bold text-white">Portfolio.</h1>
 

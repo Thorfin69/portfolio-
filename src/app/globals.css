@@ -27,3 +27,8 @@ body {
     text-wrap: balance;
   }
 }
+section {
+  scroll-margin-top: 8px; /* Adjust this value based on your header height */
+}
+
+

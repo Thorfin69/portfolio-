@@ -9,7 +9,7 @@ const projects = [
   {
     id: 1,
     title: "Logo and Brand identity design for a Book store",
-    images: ["/Assets/Project-3/1.jpg", "/Assets/Project-1/2.jpg", "/Assets/Project-1/3.jpg","/Assets/Project-1/4.jpg" , "/Assets/Project-1/5.jpg" , "/Assets/Project-1/6.jpg" , "/Assets/Project-1/7.jpg"  , "/Assets/Project-1/8.jpg"],
+    images: [ "/Assets/Project-1/2.jpg", "/Assets/Project-1/3.jpg","/Assets/Project-1/4.jpg" , "/Assets/Project-1/5.jpg" , "/Assets/Project-1/6.jpg" , "/Assets/Project-1/7.jpg"  , "/Assets/Project-1/8.jpg"],
     description: " A timeless and creative logo that embodies the essence of knowledge, literature, and imagination, crafted to strengthen the bookstore's unique brand presence.",
   },
   {
@@ -71,14 +71,13 @@ function ProjectCard({ project, index }) {
     >
       {/* Image Slider */}
       <div className="relative h-64 overflow-hidden">
-        {/* <Image
-          src={project.images[currentImage]}
-          alt={project.title}
-          layout="fill"
-          objectFit="cover"
-          className={`transition-opacity duration-1000 ease-in-out ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
-          onLoad={() => setIsLoaded(true)}
-        /> */}
+      <Image
+            src={project.images[currentImage]}
+            alt={project.title}
+            fill
+            className={`object-cover transition-opacity duration-1000 ease-in-out ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+            onLoad={() => setIsLoaded(true)}
+          />
         {/* Smooth overlay on hover */}
         <motion.div
           className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"

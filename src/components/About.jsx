@@ -10,13 +10,13 @@ export default function About() {
             {/* Circular background with blur effect */}
             <div className="absolute  inset-0 bg-cyan-400 rounded-full blur-2xl opacity-75"></div>
             {/* Circular profile image */}
-            {/* <Image
+            <Image
               src="/Assets/pfp2.png"
               alt="Profile"
               width={320}
               height={320}
               className="rounded-full object-cover relative z-10 transition-transform duration-300 transform hover:scale-105"
-            /> */}
+            />
           </div>
         </div>
         <div className="md:w-1/2 md:pl-12">
