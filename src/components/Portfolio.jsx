@@ -10,13 +10,15 @@ const projects = [
     id: 1,
     title: "Logo and Brand identity design for a Book store",
     images: [
-      "https://res.cloudinary.com/dzntvx1ws/image/upload/v1728749064/main/Project-1/8.jpg",
+      "https://res.cloudinary.com/dzntvx1ws/image/upload/v1728815593/main/Project-1/1.jpg",
       "https://res.cloudinary.com/dzntvx1ws/image/upload/v1728749064/main/Project-1/2.jpg",
       "https://res.cloudinary.com/dzntvx1ws/image/upload/v1728749064/main/Project-1/3.jpg",
       "https://res.cloudinary.com/dzntvx1ws/image/upload/v1728749064/main/Project-1/4.jpg",
       "https://res.cloudinary.com/dzntvx1ws/image/upload/v1728749064/main/Project-1/5.jpg",
       "https://res.cloudinary.com/dzntvx1ws/image/upload/v1728749064/main/Project-1/6.jpg",
       "https://res.cloudinary.com/dzntvx1ws/image/upload/v1728749064/main/Project-1/7.jpg",
+      "https://res.cloudinary.com/dzntvx1ws/image/upload/v1728749064/main/Project-1/8.jpg",
+      "https://res.cloudinary.com/dzntvx1ws/image/upload/v1728749064/main/Project-1/9.jpg",
     ],
     description: "A timeless and creative logo that embodies the essence of knowledge, literature, and imagination, crafted to strengthen the bookstore's unique brand presence."
   },
@@ -31,6 +33,7 @@ const projects = [
       "https://res.cloudinary.com/dzntvx1ws/image/upload/v1728750022/main/Project-2/5.jpg",
       "https://res.cloudinary.com/dzntvx1ws/image/upload/v1728750022/main/Project-2/6.jpg",
       "https://res.cloudinary.com/dzntvx1ws/image/upload/v1728750022/main/Project-2/7.jpg",
+      "https://res.cloudinary.com/dzntvx1ws/image/upload/v1728750022/main/Project-2/8.jpg",
     ],
     description: "A sleek and modern logo design that reflects the brand's dedication to comfort, style, and innovation in footwear, resonating with its target audience."
   },
@@ -38,13 +41,15 @@ const projects = [
     id: 3,
     title: "Logo Design for a Perfume Brand",
     images: [
-      "https://res.cloudinary.com/dzntvx1ws/image/upload/v1728750177/main/Project-3/1.jpg",
+      "https://res.cloudinary.com/dzntvx1ws/image/upload/v1728816381/main/Project-3/1.jpg",
       "https://res.cloudinary.com/dzntvx1ws/image/upload/v1728750177/main/Project-3/2.jpg",
       "https://res.cloudinary.com/dzntvx1ws/image/upload/v1728750177/main/Project-3/3.jpg",
       "https://res.cloudinary.com/dzntvx1ws/image/upload/v1728750177/main/Project-3/4.jpg",
       "https://res.cloudinary.com/dzntvx1ws/image/upload/v1728750177/main/Project-3/5.jpg",
       "https://res.cloudinary.com/dzntvx1ws/image/upload/v1728750177/main/Project-3/6.jpg",
       "https://res.cloudinary.com/dzntvx1ws/image/upload/v1728750177/main/Project-3/7.jpg",
+      "https://res.cloudinary.com/dzntvx1ws/image/upload/v1728750177/main/Project-3/8.jpg",
+      "https://res.cloudinary.com/dzntvx1ws/image/upload/v1728750177/main/Project-3/9.jpg",
     ],
     description: "An elegant and sophisticated logo representing luxury and fragrance, designed to evoke a sense of refinement and exclusivity for the perfume brand."
   }
@@ -111,6 +116,7 @@ function ProjectCard({ project, index, onViewProject }) {
 >
   <div className="relative h-64 overflow-hidden">
     <Image
+      // src={project.images[currentImage]}
       src={project.images[currentImage]}
       alt={project.title}
       fill
@@ -122,10 +128,10 @@ function ProjectCard({ project, index, onViewProject }) {
   </div>
 
   <div className="p-6 text-center">
-    <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-    <p className="text-muted-foreground mb-4">{project.description}</p>
+    <h3 className="text-xl text-white font-semibold mb-2">{project.title}</h3>
+    <p className="text-muted-foreground text-white mb-4">{project.description}</p>
     <motion.button
-      className="inline-flex items-center px-4 py-2 border border-primary text-primary hover:glow-border rounded-md hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
+      className="inline-flex items-center px-4 py-2 border border-primary text-white text-primary hover:glow-border rounded-md hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       onClick={onViewProject}
@@ -154,11 +160,11 @@ function ProjectDetail({ project, onBack }) {
         whileTap={{ scale: 0.95 }}
         onClick={onBack}
       >
-        <ArrowLeft className="w-4 h-4 mr-2" />
+        <ArrowLeft className="w-4 h-4 text-white mr-2" />
         Back to Projects
       </motion.button>
-      <h2 className="text-2xl font-bold mb-4">{project.title}</h2>
-      <p className="text-muted-foreground mb-6">{project.description}</p>
+      <h2 className="text-2xl font-bold text-white mb-4">{project.title}</h2>
+      <p className="text-muted-foreground text-white mb-6">{project.description}</p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {project.images.map((image, index) => (
           <div key={index} className="relative h-64 rounded-lg overflow-hidden">
@@ -167,7 +173,7 @@ function ProjectDetail({ project, onBack }) {
               alt={`${project.title} - Image ${index + 1}`}
               fill
               className="object-cover transition-all duration-300 ease-in-out hover:scale-110"
-            />
+            />  
           </div>
         ))}
       </div>
