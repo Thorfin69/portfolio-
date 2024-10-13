@@ -11,7 +11,7 @@ const projects = [
     title: "Logo and Brand identity design for a Book store",
     images: [
       "https://res.cloudinary.com/dzntvx1ws/image/upload/v1728815593/main/Project-1/1.jpg",
-      "https://res.cloudinary.com/dzntvx1ws/image/upload/v1728749064/main/Project-1/2.jpg",
+      // "https://res.cloudinary.com/dzntvx1ws/image/upload/v1728749064/main/Project-1/2.jpg",
       "https://res.cloudinary.com/dzntvx1ws/image/upload/v1728749064/main/Project-1/3.jpg",
       "https://res.cloudinary.com/dzntvx1ws/image/upload/v1728749064/main/Project-1/4.jpg",
       "https://res.cloudinary.com/dzntvx1ws/image/upload/v1728749064/main/Project-1/5.jpg",
