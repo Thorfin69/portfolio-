@@ -30,7 +30,7 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className={`bg-gray-800 border border-gray-700 rounded-lg p-6 transition-transform transform hover:-translate-y-2 hover:ring-2 hover:ring-blue-500 hover:shadow-lg`}
+              className={`bg-gray-800 border border-gray-700 rounded-lg p-6 transition-transform transform hover:-translate-y-2 hover:ring-2 hover:glow-border hover:shadow-lg`}
 >
               <div className="flex flex-col items-center mb-4">
                 <service.icon className="w-12 h-12 text-cyan-400" />
